@@ -27,11 +27,21 @@ app.use("/api", productRoutes);
 app.use("/api", orderRoutes);
 
 //databse connection enstablished
+// mongoose
+//   .connect(process.env.DATABASE_NAME, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useCreateIndex: true,
+//   })
+//   .then(() => {
+//     console.log("DB CONNECTED");
+//   })
+//   .catch(() => console.log("Ooops FAIL TO MAKE A CONNECTION WITH DB....!!!"));
+
 mongoose
-  .connect(process.env.DATABASE_NAME, {
-    useNewUrlParser: true,
+  .connect(process.env.MONGO_ATLAS_CLOUD, {
     useUnifiedTopology: true,
-    useCreateIndex: true,
+    useNewUrlParser: true,
   })
   .then(() => {
     console.log("DB CONNECTED");
